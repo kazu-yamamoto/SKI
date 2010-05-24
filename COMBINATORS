@@ -1,0 +1,29 @@
+Sxyz = xz(yz)     -- <*>
+Kxy = x           -- const
+Ix = x            -- id,   I = SKK
+Bxyz = x(yz)      -- (.),  B = S(KS)K
+Cxyz = xzy        -- flip, C = S(BBS)(KK)
+Txy = yx          --       T = CI
+Wxy = xyy         --       W = SS(KI) = ST
+Mx = xx           --       M = SII = STT = WI = WT
+Lxy = x(yy)       --       L = CBM = BWB = QM
+Qxyz = y(xz)      --       Q = CB
+Oxy = y(xy)       --       O = SI
+Uxy = y(xxy)      --       U = LO
+Yx = x(Yx)        --       Y = SLL = BML = UU
+
+S スズメ
+K カラス
+I インコ
+B
+C カッコウ
+T タカ
+W ワシ
+M メジロ (魔法鳥)
+L ルリビタキ ？
+Q キュウカンチョウ
+O オシドリ
+U ウ
+Y ヤンバルクイナ
+
+http://www.angelfire.com/tx4/cus/combinator/birds.html

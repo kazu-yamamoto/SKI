@@ -1,0 +1,41 @@
+SKI combinator emulator by Kazu Yamamoto
+
+Commands:
+
+  get   -- show the table of combinator definition
+  clear -- initialize the table of combinator definition
+  def   -- define combinator
+  eval  -- evaluate expression
+
+    % ghci Command.hs
+    > eval "((S(KS))K)xyz"
+    (x(yz))
+    > eval "S(KS)Kxyz"
+    (x(yz))
+
+    % ghci Command.hs
+    > get
+    fromList [('K',K),('S',S)]
+    > def "I=SKK"
+    > get
+    fromList [('I',((SK)K)),('K',K),('S',S)]
+    > eval "Ix"
+    x
+    > def "B=S(KS)K"
+    > eval "Bxyz"
+    (x(yz))
+    > clear
+    > get
+    fromList [('K',K),('S',S)]
+
+
+Combinator definitions:
+
+    def "I=SKK"
+    def "B=S(KS)K"
+    def "C=S(BBS)(KK)"
+    def "T=CI"
+    def "W=ST"
+    def "M=SII"
+    def "L=CBM"
+    def "Y=SLL"
