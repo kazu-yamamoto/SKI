@@ -20,11 +20,14 @@ get = readIORef envRef
 ----------------------------------------------------------------
 
 eval :: String -> IO ()
-eval cs = do
+eval cs = eval' cs >>= putStrLn
+
+eval' :: String -> IO String
+eval' cs = do
     env <- get
     let exp0 = parseExp cs env
         exp1 = evaluate exp0
-    print exp1
+    return $ show exp1
 
 ----------------------------------------------------------------
 
