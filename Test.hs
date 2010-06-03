@@ -1,7 +1,9 @@
 module Test where
 
-import Test.HUnit
 import Command
+import Test.Framework (defaultMain, testGroup, Test, TestName)
+import Test.Framework.Providers.HUnit
+import Test.HUnit hiding (Test)
 
 define :: IO ()
 define = do
@@ -30,14 +32,14 @@ testSpec = [
   , ("U", "Uxy",  "(y((xx)y))")
   ]
 
-makeTest :: (String, String, String) -> Test
-makeTest (label, expr, ret) = (label ++ " combinator") ~: do
+makeTest :: (TestName, String, String) -> Test
+makeTest (label, expr, ret) = testCase label $ do
     define
     x <- eval' expr
     x @?= ret
 
-tests :: Test
-tests = test $ map makeTest testSpec
+tests :: [Test]
+tests = [ testGroup "Combinator definition" (map makeTest testSpec)]
 
-main :: IO Counts
-main = runTestTT tests
+main :: IO ()
+main = defaultMain tests
