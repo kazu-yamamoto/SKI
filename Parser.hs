@@ -3,9 +3,11 @@ module Parser (
   , parseDef
   ) where
 
+import Control.Applicative hiding (many,optional,(<|>))
 import Env
 import Exp
-import Parsec
+import Text.Parsec
+import Text.Parsec.String
 
 type SKIParser a = GenParser Char Env a
 
